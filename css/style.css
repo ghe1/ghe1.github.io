@@ -1,14 +1,19 @@
 /* DEBUGGING PURPOSES */
-/* 
+/*
 * {
   border: 1px solid red;
-} 
+}
 */
 
 body, h1, h2, h3, p {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   color: white;
   text-shadow: 0px 0px 10px black;
+}
+
+html, body {
+  overflow-x: hidden !important;
+  width: auto !important;
 }
 
 .nav.navbar-nav.navbar-right li a, .navbar-brand.navlink {
