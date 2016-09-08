@@ -15,3 +15,31 @@ $(document).ready(function() {
     $(this).css("color", "white");
   });
 });
+
+$(function() {
+    $('.fader img:not(:first)').hide();
+
+    var pause = false;
+
+    function fadeNext(time) {
+        $('.fader img').first().fadeOut(time, function() {
+          $(this).appendTo($('.fader'));
+          $('.fader img').first().fadeIn(time)
+        });
+    }
+
+    $('.fader img').hover(function() {
+        pause = true;
+    },function() {
+        pause = false;
+    });
+
+    function doRotate() {
+        if(!pause) {
+            fadeNext(1000);
+        }
+    }
+
+    var rotate = setInterval(doRotate, 5000);
+
+});
