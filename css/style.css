@@ -11,10 +11,6 @@ body, h1, h2, h3, p, a {
   text-shadow: 0px 0px 10px black;
 }
 
-#factlist {
-  font-size: 18px;
-}
-
 html, body {
   overflow-x: hidden !important;
   width: auto !important;
@@ -88,19 +84,19 @@ hr {
   text-align: left;
 }
 
-#home {
+#home::before {
   background-image: url("../assets/chicagosun.jpg");
 }
 
-#about {
+#about::before {
   background-image: url("../assets/chicagobike.jpg");
 }
 
-#portfolio {
+#portfolio::before {
   background-image: url("../assets/glacier.jpg");
 }
 
-#contact {
+#contact::before {
   background-image: url("../assets/littleme.jpg");
 }
 
@@ -112,11 +108,12 @@ hr {
   margin-top: 100px;
   text-align: center;
   width: 33%;
-  border-color: white;
-  color: black;
+}
+
+#about-box, #description, .thumbnail {
   border-width: 5px;
   border-radius: 15px;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 #pic {
@@ -124,17 +121,31 @@ hr {
   max-height: 70%
 }
 
-.jumbotron {
-  background-size: cover;
-  background-attachment: fixed;
-  min-height: 100vh;
-  margin: 0 0;
-  position: relative;
+#contact-list {
+  margin-top: 10%;
 }
 
-.thumbnail {
-  background-color: rgba(0,0,0,0);
+.jumbotron {
+  position: relative;
+  background: gray;
+  overflow: hidden;
+  min-height: 100vh;
+  margin: 0 0;
 }
+
+.jumbotron::before {
+  content: '';
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  opacity: 0.6;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
 
 .defautlhr {
   border-width: 2px;

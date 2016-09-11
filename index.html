@@ -25,7 +25,6 @@
         <li><a href="#about" class="navlink"><i class="glyphicon glyphicon-user"></i> About</a></li>
         <li><a href="#portfolio" class="navlink"><i class="glyphicon glyphicon-briefcase"></i> Portfolio</a></li>
         <li><a href="#contact" class="navlink"><i class="glyphicon glyphicon-send"></i> Contact</a></li>
-        <li><a href="#" class="navlink"><i class="glyphicon glyphicon-paperclip"></i> Resume</a></li>
       </ul>
     </div>
   </div>
@@ -69,7 +68,7 @@
       <hr>
     </div>
     <div class="row container-fluid">
-      <div class="col-lg-6">
+      <div class="col-lg-6" id='about-box'>
         <p>Some facts about George:
           <ul id='factlist'>
             <li>
@@ -88,10 +87,10 @@
               I love running. I've trained for everything from endurance races like the Chicago Triathlon and the Chicago Marathon to 5Ks and 10Ks.
             </li>
             <li>
-              I'm an avid gamer, and I'm currently playing my PS4 more than ever, in addition to enjoying games from Steam in my off time.
+              I'm a gamer, and I'm currently playing my PS4 more than ever, in addition to enjoying games from Steam in my off time.
             </li>
             <li>
-              I was President of Gamma Sigma chapter of the volunteer fraternity Alpha Phi Omega. I spent a lot of time volunteering and getting my hands dirty and I loved every moment.
+              I was President of Gamma Sigma chapter of the volunteer fraternity Alpha Phi Omega. I spent a lot of time volunteering and enjoyed every moment.
             </li>
             <li>
               I have run across the length of Iowa (339 miles!) with a team.
@@ -109,47 +108,52 @@
 </div>
 
 <div class="jumbotron" id="portfolio">
-  <h1 class="bigtext" id="portfolio-title">Portfolio</h1>
-  <hr>
-  <p class="tagline">See below for examples of my work.</p>
-  <div class="container-fluid row" style="text-align: center" id="portfolio-showcase">
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="" alt="">
-        <div class="caption">
-          <h3>Project 1</h3>
-          <p>...</p>
-          <p>
-            <a href="#" class="btn btn-primary" role="button">View</a>
-            <a href="#" class="btn btn-default" role="button"><i class="fa fa-github"></i> View on GitHub</a>
-          </p>
+  <div class="container-fluid injumbo">
+    <h1 class="bigtext" id="portfolio-title">Portfolio</h1>
+    <hr>
+    <p class="tagline">See below for examples of my work.</p>
+    <div class="container-fluid row" style="text-align: center" id="portfolio-showcase">
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="" alt="">
+          <div class="caption">
+            <h3>Project 1 - AwkWord</h3>
+            <p>A small word game designed using the functional language Elm, which in turn generates Javascript and HTML for web compatibility</p>
+            <p>
+              <a href="http://ghe1.github.io/AwkWord" class="btn btn-primary" role="button">View</a>
+              <a href="https://github.com/ghe1/AwkWord/" class="btn btn-default" role="button"><i class="fa fa-github"></i> View on GitHub</a>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="" alt="">
-        <div class="caption">
-          <h3>Project 2</h3>
-          <p>...</p>
-          <p>
-            <a href="#" class="btn btn-primary" role="button">View</a>
-            <a href="#" class="btn btn-default" role="button"><i class="fa fa-github"></i> View on GitHub</a>
-          </p>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="" alt="">
+          <div class="caption">
+            <h3>Project 2 - Markov Generator</h3>
+            <p>
+              A Markov generator written in Python that takes in a trianing text and produces a randomly generated text based on it.
+              Currently hosted on OpenShift and trained using freely available fan stories
+            </p>
+            <p>
+              <a href="http://python-jumpingtiger.rhcloud.com/" class="btn btn-primary" role="button">View</a>
+              <a href="https://github.com/ghe1/fanficgen" class="btn btn-default" role="button"><i class="fa fa-github"></i> View on GitHub</a>
+            </p>
+          </div>
+
         </div>
       </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="" alt="">
-        <div class="caption">
-          <h3>Project 3</h3>
-          <p>...</p>
-          <p>
-            <a href="#" class="btn btn-primary" role="button">View</a>
-            <a href="#" class="btn btn-default" role="button"><i class="fa fa-github"></i> View on GitHub</a>
-          </p>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="" alt="">
+          <div class="caption">
+            <h3>Project 3 - This Website</h3>
+            <p>Personal website designed from scratch combining CSS and HTML properties along with Javascript. Started and hosted through GitHub and GitHub pages</p>
+            <p>
+              <a href="https://github.com/ghe1/ghe1.github.io" class="btn btn-default" role="button"><i class="fa fa-github"></i> View on GitHub</a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -157,19 +161,21 @@
 </div>
 
 <div class="jumbotron" id="contact">
-  <h1 class="bigtext" id="contact-title">Contact</h1>
-  <hr>
-  <div class="container-fluid">
-    <div class="text-center">
-      <h3>E-mail me! <i class="fa fa-envelope"></i></h3>
-      <p>Please feel free to reach out to me with any inquiries at xxx (at) gmail.com</p>
+  <div class="container-fluid injumbo">
+    <h1 class="bigtext" id="contact-title">Contact</h1>
     <hr>
-      <h3>Facebook! <i class="fa fa-facebook"></i></h3>
-      <p>I can't feel my Face(book) when I'm with you. And I love it.</p>
-    <hr>
-      <h3>LinkedIn! <i class="fa fa-linkedin"></i></h3>
-      <p>Please connect with me so that I can validate my online existence.</p>
-      <h3>
+    <div class="container-fluid">
+      <div class="text-center" id="contact-list">
+        <a href="https://www.facebook.com/he.george">
+          <h3>Facebook! <i class="fa fa-facebook"></i></h3>
+        </a>
+        <p>I can't feel my Face(book) when I'm with you. And I love it.</p>
+      <hr>
+        <a href="https://www.linkedin.com/in/georgehe1">
+          <h3>LinkedIn! <i class="fa fa-linkedin"></i></h3>
+        </a>
+        <p>Feel free to connect with me and send me a message introducing yourself. I won't bite.</p>
+      </div>
     </div>
   </div>
 </div>
