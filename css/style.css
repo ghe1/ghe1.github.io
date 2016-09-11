@@ -11,10 +11,6 @@ body, h1, h2, h3, p, a {
   text-shadow: 0px 0px 10px black;
 }
 
-#factlist {
-  font-size: 18px;
-}
-
 html, body {
   overflow-x: hidden !important;
   width: auto !important;
@@ -112,12 +108,9 @@ hr {
   margin-top: 100px;
   text-align: center;
   width: 33%;
-  border-width: 5px;
-  border-radius: 15px;
-  background: rgba(0, 0, 0, 0.3);
 }
 
-#about-box {
+#about-box, #description, .thumbnail {
   border-width: 5px;
   border-radius: 15px;
   background: rgba(0, 0, 0, 0.3);
@@ -126,6 +119,10 @@ hr {
 #pic {
   text-align: center;
   max-height: 70%
+}
+
+#contact-list {
+  margin-top: 10%;
 }
 
 .jumbotron {
@@ -146,11 +143,9 @@ hr {
   opacity: 0.6;
   background-size: cover;
   background-attachment: fixed;
+  background-position: center;
 }
 
-.thumbnail {
-  background-color: rgba(0,0,0,0);
-}
 
 .defautlhr {
   border-width: 2px;
