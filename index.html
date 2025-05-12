@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome to This Page!</title>
+  <style>
+    :root {
+      --bg-color-light: #f5f5f5;
+      --text-color-light: #333;
+      --bg-color-dark: #1e1e1e;
+      --text-color-dark: #f5f5f5;
+      --game-bg-light: #e0e0e0;
+      --game-bg-dark: #2a2a2a;
+      --border-color-light: #bbb;
+      --border-color-dark: #444;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      background-color: var(--bg-color-light);
+      color: var(--text-color-light);
+      text-align: center;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark {
+      background-color: var(--bg-color-dark);
+      color: var(--text-color-dark);
+    }
+
+    header {
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-top: 0;
+    }
+
+    #theme-toggle {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #888;
+      color: white;
+      cursor: pointer;
+    }
+
+    #game {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      background: var(--game-bg-light);
+      margin-top: 2rem;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 2px solid var(--border-color-light);
+      transition: background 0.3s, border-color 0.3s;
+    }
+
+    body.dark #game {
+      background: var(--game-bg-dark);
+      border-color: var(--border-color-dark);
+    }
+
+    .dot {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: crimson;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    #score {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Hi there! 👋</h1>
+    <p>This is a placeholder page for a GitHub Pages project.</p>
+    <p>Since you're here, why not play a quick game?</p>
+    <button id="theme-toggle">Toggle Dark Mode</button>
+  </header>
+
+  <div id="game">
+    <div class="dot" id="dot"></div>
+  </div>
+  <div id="score">Score: 0</div>
+
+  <script>
+    // Dot game logic
+    const dot = document.getElementById('dot');
+    const game = document.getElementById('game');
+    const scoreDisplay = document.getElementById('score');
+    let score = 0;
+
+    function moveDot() {
+      const maxX = game.clientWidth - dot.clientWidth;
+      const maxY = game.clientHeight - dot.clientHeight;
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+      dot.style.left = x + 'px';
+      dot.style.top = y + 'px';
+    }
+
+    dot.addEventListener('click', () => {
+      score++;
+      scoreDisplay.textContent = 'Score: ' + score;
+      moveDot();
+    });
+
+    setInterval(moveDot, 2000);
+    moveDot();
+
+    // Theme toggle logic
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    function setTheme(isDark) {
+      if (isDark) {
+        body.classList.add('dark');
+        toggleBtn.textContent = 'Toggle Light Mode';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        body.classList.remove('dark');
+        toggleBtn.textContent = 'Toggle Dark Mode';
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      const isDark = body.classList.contains('dark');
+      setTheme(!isDark);
+    });
+
+    // On load
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      setTheme(true);
+    } else {
+      setTheme(false);
+    }
+  </script>
+
+</body>
+</html>
